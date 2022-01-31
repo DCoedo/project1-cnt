@@ -12,11 +12,11 @@ def getMsg(string):
         if msg.find(bytes) != 0:
             bytes = b""
 
-def mail(fileName, sock):
+def mail(filename, sock):
     try:
-        file = open(fileName, "rb")
+        file = open(filename, "rb")
     except FileNotFoundError:
-        print(f"The file named {fileName} doesn't exit.")
+        print(f"The file named {filename} doesn't exit.")
         quit()
     else:
         while True:
