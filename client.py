@@ -1,7 +1,6 @@
 import socket
 import sys
-import argv
-from sys
+from sys import argv
 
 
 def getMsg(string):
