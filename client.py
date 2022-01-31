@@ -17,7 +17,7 @@ def mail(filename, sock):
     try:
         file = open(filename, "rb")
     except FileNotFoundError:
-        print(f"The file named {fileName} doesn't exit.")
+        print(f"The file named {filename} doesn't exit.")
         quit()
     else:
         while True:
@@ -40,13 +40,15 @@ if (len(argv) != 4):
 #Arguments needed
 projectname, host, port, filename = argv
 
-if int(port) < 1 or int(port) > 65535:
+if int(port) < 1024 or int(port) > 65535:
     sys.stderr.write("[ERROR]: Invalid port! Must between 1 and 65535")
     sys.exit(1)
 
+
 #10 second timeout counter
-sock.timeOut(10)
+sock.settimeout(10)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 2048)
+
 try:
     sock.connect((host, int(port)))
 
