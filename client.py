@@ -4,10 +4,6 @@ import argv
 from sys
 
 
-PORT = 65432
-HOST = socket.gethostbyname(socket.gethostname())
-ADDR = (HOST, PORT)
-
 def getMsg(string):
     msg = string
     bytes = b""
@@ -36,7 +32,6 @@ def mail(fileName, sock):
 
 #Connects Client and Binds them to the address
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(ADDR)
 
 
 if (len(argv) != 4):
