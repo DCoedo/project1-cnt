@@ -38,9 +38,9 @@ if (len(argv) != 4):
 
 
 #Arguments needed
-projectName, HOST, PORT, fileName = argv
+projectname, host, port, filename = argv
 
-if int(PORT) < 1024 or int(PORT) > 65535:
+if int(port) < 1024 or int(port) > 65535:
     print("[ERROR]: Invalid port")
     quit(1)
 
@@ -49,7 +49,7 @@ sock.timeOut(10)
 sock
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 2048)
 try:
-    sock.connect((HOST, int(PORT)))
+    sock.connect((host, int(port)))
 
     getMsg(b"accio\r\n")# First Message
 
