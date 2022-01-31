@@ -31,7 +31,7 @@ def mail(fileName, sock):
 
 
 #Connects Client and Binds them to the address
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
 if (len(argv) != 4):
