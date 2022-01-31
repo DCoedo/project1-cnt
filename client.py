@@ -41,7 +41,7 @@ if (len(argv) != 4):
 #Arguments needed
 projectName, HOST, PORT, fileName = argv
 
-if int(port) < 2022 or int(port) > 65535:
+if int(port) < 1024 or int(port) > 65535:
     print("[ERROR]: Invalid port")
     quit(1)
 
