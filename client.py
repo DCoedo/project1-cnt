@@ -2,15 +2,14 @@ import socket
 import sys
 from sys import argv
 
-
 def getMsg(string):
     msg = string
     bytes = b""
     while bytes != msg:
         bytes += sock.recv(2022)
         if bytes == msg:
-            return False
-        if msg.find(bytes) != 0
+            break
+        if msg.find(bytes) != 0:
             bytes = b""
 
 def mail(fileName, sock):
@@ -41,14 +40,14 @@ if (len(argv) != 4):
 #Arguments needed
 projectName, HOST, PORT, fileName = argv
 
-if int(port) < 1024 or int(port) > 65535:
+if int(port) < 1 or int(port) > 65535:
     print("[ERROR]: Invalid port")
     quit(1)
 
 #10 second timeout counter
 sock.timeOut(10)
 sock
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 4044)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 2048)
 try:
     sock.connect((HOST, int(PORT)))
 
@@ -66,16 +65,9 @@ try:
     sock.close()
 
 except socket.error: #TimeOut
-    #print("The connectixon took longer than 10 seconds")
     sys.stderr.write("[ERROR]: Time-out error - connection took to long to be established.")
     sys.exit(1)
 
 sys.exit(0)
-
-
-
-
-
-
 
 
