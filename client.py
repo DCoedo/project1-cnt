@@ -41,14 +41,14 @@ if (len(argv) != 4):
 #Arguments needed
 projectName, HOST, PORT, fileName = argv
 
-if int(port) < 1 or int(port) > 65535:
+if int(port) < 2022 or int(port) > 65535:
     print("[ERROR]: Invalid port")
     quit(1)
 
 #10 second timeout counter
 sock.timeOut(10)
 sock
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 2022)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 4044)
 try:
     sock.connect((HOST, int(PORT)))
 
